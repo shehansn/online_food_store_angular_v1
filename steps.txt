@@ -1,0 +1,11 @@
+git name- online_food_store_angular_v1 
+mongoDB name- 
+ng new frontend 
+ng serve -o
+
+// to remove git file in frontned folder 
+cd frontend 
+rm -rf .git 
+
+in frontend folder 
+ng g c components/partials/header 
