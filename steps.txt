@@ -16,6 +16,7 @@ ng g c components/partials/search
 ng g c components/partials/tags
 ng g c components/partials/title
 ng g c components/partials/cart-summary
+ng g c components/partials/not-found
 
 ng g s services/food
 ng g s services/cart
