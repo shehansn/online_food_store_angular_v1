@@ -12,6 +12,7 @@ import { FoodPageComponent } from './components/pages/food-page/food-page.compon
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { CartSummaryComponent } from './components/partials/cart-summary/cart-summary.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CartSummaryComponent } from './components/partials/cart-summary/cart-su
     FoodPageComponent,
     CartPageComponent,
     TitleComponent,
-    CartSummaryComponent
+    CartSummaryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
