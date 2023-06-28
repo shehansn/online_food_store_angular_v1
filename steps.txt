@@ -7,5 +7,99 @@ ng serve -o
 cd frontend 
 rm -rf .git 
 
+git branch sn_AddFeature_23_07_27
+git checkout sn_AddFeature_23_07_27
+
 in frontend folder 
 ng g c components/partials/header 
+ng g c components/partials/search
+ng g c components/partials/tags
+ng g c components/partials/title
+ng g c components/partials/cart-summary
+
+ng g s services/food
+ng g s services/cart
+
+ng g c components/pages/home
+ng g c components/pages/food-page
+ng g c components/pages/cart-page
+
+
+npm install ng-starrating --force
+
+
+
+{
+    "items": [
+        {
+            "food": [
+                {
+                    "id": "1",
+                    "name": "Pizza Pepperoni",
+                    "cookTime": "10-20",
+                    "price": 10,
+                    "favorite": false,
+                    "origins": [
+                        "italy"
+                    ],
+                    "stars": 4.5,
+                    "imageUrl": "assets/food-1.jpg",
+                    "tags": [
+                        "FastFood",
+                        "Pizza",
+                        "Lunch"
+                    ]
+                }
+            ],
+            "quantity": 1
+        },
+        {
+            "food": [
+                {
+                    "id": "2",
+                    "name": "Meatball",
+                    "price": 20,
+                    "cookTime": "20-30",
+                    "favorite": true,
+                    "origins": [
+                        "persia",
+                        "middle east",
+                        "china"
+                    ],
+                    "stars": 4.7,
+                    "imageUrl": "assets/food-2.jpg",
+                    "tags": [
+                        "SlowFood",
+                        "Lunch"
+                    ]
+                }
+            ],
+            "quantity": 1
+        },
+        {
+            "food": [
+                {
+                    "id": "2",
+                    "name": "Meatball",
+                    "price": 20,
+                    "cookTime": "20-30",
+                    "favorite": true,
+                    "origins": [
+                        "persia",
+                        "middle east",
+                        "china"
+                    ],
+                    "stars": 4.7,
+                    "imageUrl": "assets/food-2.jpg",
+                    "tags": [
+                        "SlowFood",
+                        "Lunch"
+                    ]
+                }
+            ],
+            "quantity": 1
+        }
+    ],
+    "totalPrice": null,
+    "totalCount": 3
+}
