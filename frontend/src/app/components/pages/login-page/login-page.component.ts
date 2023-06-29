@@ -12,7 +12,7 @@ export class LoginPageComponent implements OnInit {
 
   loginForm!: FormGroup
   isSubmited = false;
-  retunUrl = ''
+  returnUrl = ''
 
   constructor(private formBuilder: FormBuilder, private userService: UserService,
     private activatedRoute: ActivatedRoute, private router: Router) { }
@@ -22,7 +22,7 @@ export class LoginPageComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
-    this.retunUrl = this.activatedRoute.snapshot.queryParams.retunUrl;
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
 
   }
 
@@ -38,7 +38,7 @@ export class LoginPageComponent implements OnInit {
     console.log("Submit values password", this.formControl.password.value)
 
     this.userService.login({ email: this.formControl.email.value, password: this.formControl.password.value }).subscribe(() => {
-      this.router.navigateByUrl(this.retunUrl);
+      this.router.navigateByUrl(this.returnUrl);
     });
 
   }

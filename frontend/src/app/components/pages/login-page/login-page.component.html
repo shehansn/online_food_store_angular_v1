@@ -19,11 +19,13 @@
       >
       </text-input>
 
-      <default-button text="Login">Login</default-button>
+      <default-button text="Login"></default-button>
 
       <div class="register">
         New user? &nbsp;
-        <a routerLink="/register"> Register here </a>
+        <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl }">
+          Register here
+        </a>
       </div>
     </form>
   </div>

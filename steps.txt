@@ -1,5 +1,8 @@
-git name- online_food_store_angular_v1 
-mongoDB name- 
+github name - shehansn/online_food_store_angular_v1 
+mongoDB name - project- SHEHAN'S ORG - 2022-12-26 > ONLINE_FOOD_STORE_ANGULAR_V1
+Online_Food_Store_Database
+Online_Food_Store_Collection
+
 ng new frontend 
 ng serve -o
 
@@ -30,9 +33,11 @@ ng g c components/pages/home
 ng g c components/pages/food-page
 ng g c components/pages/cart-page
 ng g c components/pages/login-page
+ng g c components/pages/register-page
 
 npm install ng-starrating --force
 npm install ngx-toastr --force
+
 
 backend
 --------------------------------
@@ -48,6 +53,9 @@ npm install @types/cors --save-dev
 npm install @types/express --save-dev
 npm install jsonwebtoken
 npm i --save-dev @types/jsonwebtoken
+npm install @types/bcryptjs --save-dev
+
+npm install mongoose dotenv bcryptjs express-async-handler
 
 
 {
