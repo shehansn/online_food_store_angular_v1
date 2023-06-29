@@ -81,3 +81,23 @@ export const sample_tags: any[] = [
 ]
 
 
+
+
+export const sample_users: any[] = [
+  {
+
+    name: 'shehan nishara1',
+    email: "shehan1@gmail.com",
+    password: "123456",
+    address: "tangalle",
+    isAdmin: true,
+
+  },
+  {
+    name: 'shehan nishara2',
+    email: "shehan2@gmail.com",
+    password: "123456",
+    address: "tangalle2",
+    isAdmin: false,
+  },
+]
