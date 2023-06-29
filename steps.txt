@@ -29,6 +29,18 @@ ng g c components/pages/cart-page
 npm install ng-starrating --force
 
 
+backend
+--------------------------------
+mkdir backend
+cd backend 
+npm init or npm init -y = initialization with all default values
+npm install typescript 
+create tsconfig.json file 
+npm install express cors 
+npm install ts-node --save-dev  => this server is written in tyypescript ts-node convert typescript to javascript before run.they are declared in tsconfig.json file includes
+npm install nodemon --save-dev
+npm install @types/cors --save-dev
+npm install @types/express --save-dev
 
 {
     "items": [
