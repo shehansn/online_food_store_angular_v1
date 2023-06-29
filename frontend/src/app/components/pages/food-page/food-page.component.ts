@@ -23,7 +23,7 @@ export class FoodPageComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       if (params.id) {
-        this.food = this.foodService.getFoodById(params.id);
+        //this.food = this.foodService.getFoodById(params.id);
         this._getProduct(params.id);
       }
     })
@@ -43,7 +43,7 @@ export class FoodPageComponent implements OnInit {
   }
 
   private _getProduct(id: string) {
-    this.foodService.getFood(id).subscribe((resFood: Food) => {
+    this.foodService.getFood(id).subscribe((resFood) => {
       this.food = resFood;
     });
   }
