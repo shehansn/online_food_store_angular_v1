@@ -17,17 +17,22 @@ ng g c components/partials/tags
 ng g c components/partials/title
 ng g c components/partials/cart-summary
 ng g c components/partials/not-found
+ng g c components/partials/input-container
+ng g c components/partials/input-validaton
+ng g c components/partials/text-input
+ng g c components/partials/default-button
 
 ng g s services/food
 ng g s services/cart
+ng g s services/user
 
 ng g c components/pages/home
 ng g c components/pages/food-page
 ng g c components/pages/cart-page
-
+ng g c components/pages/login-page
 
 npm install ng-starrating --force
-
+npm install ngx-toastr --force
 
 backend
 --------------------------------
@@ -37,10 +42,13 @@ npm init or npm init -y = initialization with all default values
 npm install typescript 
 create tsconfig.json file 
 npm install express cors 
-npm install ts-node --save-dev  => this server is written in tyypescript ts-node convert typescript to javascript before run.they are declared in tsconfig.json file includes
+npm install ts-node --save-dev  => this server is written in typescript ts-node convert typescript to javascript before run.they are declared in tsconfig.json file includes
 npm install nodemon --save-dev
 npm install @types/cors --save-dev
 npm install @types/express --save-dev
+npm install jsonwebtoken
+npm i --save-dev @types/jsonwebtoken
+
 
 {
     "items": [

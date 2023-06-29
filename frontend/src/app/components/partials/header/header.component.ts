@@ -1,8 +1,10 @@
+import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject, take, takeUntil } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { FoodService } from 'src/app/services/food.service';
+import { User } from 'src/app/shared/models/User';
 
 @Component({
   selector: 'app-header',
@@ -13,11 +15,13 @@ export class HeaderComponent implements OnInit {
 
   endSubs$ = new Subject<void>();
   count!: any;
+  user!: User;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private userService: UserService) { }
 
   ngOnInit(): void {
     this._getCartCount();
+    this._getUser();
   }
 
   _getCartCount() {
@@ -25,4 +29,16 @@ export class HeaderComponent implements OnInit {
       this.count = cart?.items?.length ?? 0;
     });
   }
+
+  _getUser() {
+    this.userService.userSubject$.subscribe((newUser) => {
+      this.user = newUser;
+      console.log('user from header', this.user)
+    })
+  }
+
+  logout() {
+    this.userService.logout();
+  }
+
 }
