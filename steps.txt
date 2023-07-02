@@ -3,6 +3,7 @@ mongoDB name - project- SHEHAN'S ORG - 2022-12-26 > ONLINE_FOOD_STORE_ANGULAR_V1
 Online_Food_Store_Database
 Online_Food_Store_Collection
 
+------------------------------------------
 ng new frontend 
 ng serve -o
 
@@ -12,8 +13,9 @@ rm -rf .git
 
 git branch sn_AddFeature_23_07_27
 git checkout sn_AddFeature_23_07_27
-
+------------------------------------------
 in frontend folder 
+-------------------------------------------
 ng g c components/partials/header 
 ng g c components/partials/search
 ng g c components/partials/tags
@@ -24,23 +26,34 @@ ng g c components/partials/input-container
 ng g c components/partials/input-validaton
 ng g c components/partials/text-input
 ng g c components/partials/default-button
+ng g c components/partials/loading
+ng g c components/partials/Loader/loading-svg
+ng g c components/partials/order-items-list
+
 
 ng g s services/food
 ng g s services/cart
 ng g s services/user
+ng g s services/loading
+ng g s services/order
 
 ng g c components/pages/home
 ng g c components/pages/food-page
 ng g c components/pages/cart-page
 ng g c components/pages/login-page
 ng g c components/pages/register-page
+ng g c components/pages/checkout-page
 
 npm install ng-starrating --force
 npm install ngx-toastr --force
 
+//add interceptor for loading functionality
+ng g interceptor shared/interceptors/loading --dry-run
 
+
+----------------------------------------------------
 backend
---------------------------------
+----------------------------------------------------
 mkdir backend
 cd backend 
 npm init or npm init -y = initialization with all default values
@@ -57,7 +70,7 @@ npm install @types/bcryptjs --save-dev
 
 npm install mongoose dotenv bcryptjs express-async-handler
 
-
+--------------------------------------------------------
 {
     "items": [
         {

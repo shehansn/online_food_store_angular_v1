@@ -7,6 +7,7 @@ import asyncHandler from 'express-async-handler';
 import { HTTP_BAD_REQUEST } from '../constants/http_status';
 import bcrypt from 'bcryptjs'
 
+//http://localhost:5000/api/users/seed
 router.get("/seed", asyncHandler(
     async (req, res) => {
         const usersCount = await UserModel.countDocuments();
