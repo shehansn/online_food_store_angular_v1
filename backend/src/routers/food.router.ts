@@ -5,6 +5,7 @@ import { FoodModel } from '../models/food.model';
 
 const router = Router();
 
+//http://localhost:5000/api/foods/seed
 router.get("/seed", asyncHandler(
     async (req, res) => {
         const foodsCount = await FoodModel.countDocuments();

@@ -23,6 +23,10 @@ export class UserService implements OnInit {
     this.userObservable = this.userSubject$.asObservable();
   }
 
+  public get currentUser(): User {
+    return this.userSubject$.value;
+  }
+
   //main difference between interface and class i cannot create new instance like class
   login(userLogin: IUserLogin): Observable<User> {
     return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
