@@ -28,6 +28,11 @@ import { LoadingSvgComponent } from './components/partials/Loader/loading-svg/lo
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 import { OrderItemsListComponent } from './components/partials/order-items-list/order-items-list.component';
+import { MapComponent } from './components/partials/map/map.component';
+import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
+import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
+import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,11 @@ import { OrderItemsListComponent } from './components/partials/order-items-list/
     LoadingComponent,
     LoadingSvgComponent,
     CheckoutPageComponent,
-    OrderItemsListComponent
+    OrderItemsListComponent,
+    MapComponent,
+    PaymentPageComponent,
+    PaypalButtonComponent,
+    OrderTrackPageComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +75,7 @@ import { OrderItemsListComponent } from './components/partials/order-items-list/
     }),
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]

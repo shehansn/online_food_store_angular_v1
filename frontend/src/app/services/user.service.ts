@@ -21,6 +21,7 @@ export class UserService implements OnInit {
 
   ngOnInit(): void {
     this.userObservable = this.userSubject$.asObservable();
+
   }
 
   public get currentUser(): User {
@@ -37,6 +38,7 @@ export class UserService implements OnInit {
             `Welcome to Food Order Website ${user.name}!`,
             'Login Successfull'
           );
+          console.log(user);
           this.setUserToLocalStorage(user)
 
         },

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="content" *ngIf="order">
+    <h1>Order #{{ order.id }}</h1>
+    <div class="details">
+      <div><strong>Date</strong> {{ order.createdAt | date : "medium" }}</div>
+      <div><strong>Name</strong> {{ order.name }}</div>
+      <div><strong>Address</strong> {{ order.address }}</div>
+      <div><strong>Status</strong> {{ order.status }}</div>
+      <div *ngIf="order.paymentId">
+        <strong>Payment ID</strong> {{ order.paymentId }}
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <td colspan="5">
+          <h3>Order Items:</h3>
+        </td>
+      </tr>
+      <tr *ngFor="let item of orderItemsDetailedArray">
+        <td>
+          <a routerLink="/food/{{ item.food.id }}">
+            <img [src]="item.food.imageUrl" />
+          </a>
+        </td>
+        <td>
+          {{ item.food.name }}
+        </td>
+        <td>
+          {{ item.food.price | currency : "LKR " }}
+        </td>
+        <td>
+          {{ item.quantity }}
+        </td>
+        <td>
+          {{ item.food.price * item.quantity | currency : "LKR " }}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"></td>
+        <td>
+          <strong> Total : </strong>
+        </td>
+        <td>
+          <strong>
+            {{ orderTotal | currency : "LKR " }}
+          </strong>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <app-title title="Shipping Address"></app-title>
+    <app-map [order]="order" [readonly]="true"></app-map>
+  </div>
+</div>

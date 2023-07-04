@@ -7,6 +7,8 @@ import asyncHandler from 'express-async-handler';
 import { HTTP_BAD_REQUEST } from '../constants/http_status';
 import bcrypt from 'bcryptjs'
 
+const SECRET = process.env.JWT_SECRET;
+
 //http://localhost:5000/api/users/seed
 router.get("/seed", asyncHandler(
     async (req, res) => {
@@ -30,10 +32,12 @@ router.get("/", async (req, res) => {
 router.post("/login", asyncHandler(
     async (req, res) => {
         const { email, password } = req.body; //destructuring assignment
-        const user = await UserModel.findOne({ email, password });
-        if (user) {
+        const user = await UserModel.findOne({ email });
+
+        if (user && (await bcrypt.compare(password, user.password))) {
             res.send(generateTokenResponse(user));
-        } else {
+        }
+        else {
 
             res.send(HTTP_BAD_REQUEST).send("User Not Found");
             return;
@@ -57,7 +61,8 @@ router.post("/register", asyncHandler(
                 password: encryptedPassword,
                 name,
                 address,
-                isAdmin: false
+                isAdmin: false,
+                token: ''
             }
             const dbUser = await UserModel.create(newUser);
             res.send(generateTokenResponse(dbUser))
@@ -72,11 +77,19 @@ const generateTokenResponse = (user: any) => {
             email: user.email,
             isAdmin: user.isAdmin
         },
-        "secretToken",
+        process.env.JWT_SECRET!,
         { expiresIn: '1d' }
     );
-    user.token = token;
-    return user
+    // user.token = token;
+    // return user
+    return {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        address: user.address,
+        isAdmin: user.isAdmin,
+        token: token
+    };
 }
 
 

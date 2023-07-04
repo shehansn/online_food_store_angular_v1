@@ -12,6 +12,7 @@ export class OrderItemsListComponent implements OnInit {
 
   @Input()
   orderItems!: any;
+
   orderItemsDetailed: any
   orderItemsDetailedArray: any[] = [];
   orderItemFoodArray: any[] = [];

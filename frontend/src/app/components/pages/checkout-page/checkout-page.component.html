@@ -11,11 +11,17 @@
   </div>
   <div class="map">
     <app-title title="Choose Your Address On Map" fontSize="1.6rem"></app-title>
-    <!-- <map [order]="order"></map> -->
+    <div class="map-container">
+      <button class="find-location" (click)="findMyLocation()">
+        Find My Location
+      </button>
+
+      <div #map class="map-display"></div>
+    </div>
   </div>
   <div class="buttons-container">
     <div class="buttons">
-      <button (click)="createOrder()">Go To Payment</button>
+      <button class="place-order" (click)="createOrder()">Go To Payment</button>
     </div>
   </div>
 </div>

@@ -32,7 +32,7 @@ form {
   width: 35rem;
 }
 
-button {
+.place-order {
   color: white;
   background-color: #e72929;
   width: 100%;
@@ -44,7 +44,37 @@ button {
   box-shadow: 2px 2px 2px 2px grey;
 }
 
-button:hover {
+.place-order:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+.map-container {
+  position: relative;
+  width: 30rem;
+  height: 20rem;
+  text-align: center;
+}
+
+.map-display {
+  width: 100%;
+  height: 100%;
+}
+
+.find-location {
+  position: absolute;
+  margin: auto;
+  width: 15rem;
+  min-height: 3rem;
+  font-size: 1.2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #ffffff7c;
+  cursor: pointer;
+}
+
+.find-location:hover {
+  background-color: white;
 }
