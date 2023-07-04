@@ -1,12 +1,18 @@
+import { LatLng } from "leaflet";
+
 export class Order {
   id?: string;
-  orderItems?: OrderItem;
+  items?: any;
   phone?: string;
   status?: number;
   totalPrice?: number;
   name?: string;
   address?: string;
+  addressLatLng?: LatLng;
   dateOrdered?: string;
+  user?: any;
+  paymentId?: string;
+  createdAt?: string;
 }
 
 export class OrderItem {
